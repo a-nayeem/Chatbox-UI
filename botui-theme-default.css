@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-.botui-container{font-size:14px;background-color:#fbfbfb;font-family:"Open Sans",sans-serif}
+.botui-container{font-size:14px;background-color:#fbfbfb;font-family:"Lato",sans-serif}
 .botui-messages-container{padding:5px 15px} /* Original 5px 20px */
 .botui-actions-container{padding:5px 15px} /* Original 5px 20px */
 .botui-message{min-height:30px}

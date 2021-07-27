@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="chatbox.css">
     <link rel="stylesheet" href="botui.min.css" />
     <link rel="stylesheet" href="botui-theme-default.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="chatbox.js"></script>
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
@@ -18,22 +20,22 @@
         <span class="open_me active"></span>
         <span class="close_me"></span>
     	</button>
-    	
+
       <div class="step1_wrapper single_messenger" id="scroll">
       	<div class="wrapper-head">
            <span class="ific-logo"><img src="logo.png" style="height: 40px; width: 40px;"></span>
       	   <p class="chat-title">IFIC Aamar Bondhu<p>
       	   <button class="close"></button>
       	</div>
-        
+
         <div class="botui-app-container" id="hello-world">
       	   <bot-ui></bot-ui>
         </div>
-        
+
         <div class="wrapper-footer">
           <form id="mymsg" class="msger-inputarea">
             <input id="msg" type="text" class="msger-input">
-            <button type="submit" class="msger-send-btn">Send</button>
+            <input type="image" class="msger-send-btn" src="send-button.png">
           </form>
         </div>
     	</div>
@@ -44,7 +46,7 @@
     var botui = new BotUI('hello-world');
     var loadingMsgIndex, API = 'https://chat-engine-ific.herokuapp.com/';
     var msgCount = 0;
-  
+
     $( document ).ready(function() {
       botui.message.bot('Welcome to IFIC Bank, I am your friendly Chatbot, How can I help you?');
       botui.action.button({
@@ -62,7 +64,7 @@
             value: 'Send Complain'
           }
         ]
-      }).then(function (res) { 
+      }).then(function (res) {
         //console.log(res.value);
         sendXHR(res.value);
       });
@@ -71,12 +73,12 @@
     function showButtons(buttons){
       botui.action.button({
         action: buttons
-      }).then(function (res) { 
-          sendXHR(res.value); 
+      }).then(function (res) {
+          sendXHR(res.value);
       })
     }
-    
-    
+
+
     //send user input to chat engine
     function sendXHR(msg) {
         var xhr = new XMLHttpRequest();
@@ -86,12 +88,12 @@
         xhr.open('POST', API);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.send(msg_json);
-        
+
         xhr.responseType = 'json';
         xhr.onload = function () {
             let responseObj = xhr.response; //Json Object relied from the post request
-            //console.log(responseObj);     //Only if needed       
-            
+            //console.log(responseObj);     //Only if needed
+
             var replyMsg = responseObj.reply;
             var button = responseObj.button;
             console.log(replyMsg);
@@ -120,7 +122,7 @@
       //    buttonsToBeCleared[i].style.visibility = "hidden";
       //  }
       //  msgCount = 1;
-      //} 
+      //}
       sendXHR(msg);
       clearInput();
     }
@@ -133,12 +135,12 @@
     }
 
     function clearButtons(){
-      
+
     }
 
     function clearInput(){
       document.getElementById("msg").value = "";
-     
+
     }
 
     function sendToServer(input){

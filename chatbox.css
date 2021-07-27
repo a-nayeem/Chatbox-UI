@@ -26,17 +26,17 @@ h6 {
 /* Track */
 .ui-chat-container ::-webkit-scrollbar-track {
   background: #f1f1f1;
-} 
+}
 
 /* Handle */
 .ui-chat-container ::-webkit-scrollbar-thumb {
   background: #888;
-} 
+}
 
 /* Handle on hover */
 .ui-chat-container ::-webkit-scrollbar-thumb:hover {
   background: #555;
-} 
+}
 
 .ui-chat-container .btn_chat_lancher {
     display: block;
@@ -177,24 +177,24 @@ h6 {
     font-size: 20px;
     position: absolute;
     top: 12px;
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .ui-chat-container .wrapper-head {
   top: 0;
   height: 50px;
   width: 100%;
-  background: green;
+  background: #008b3c;
   position: sticky;
 }
 
 .ui-chat-container .wrapper-footer {
-    bottom: 0;
-	height: 50px;
+	  height: 50px;
     width: 100%;
     max-height: 50px;
-	position: absolute;
+	  position: absolute;
     margin-bottom: 0px;
+    display: inline;
 }
 
 .ui-chat-container .step1_wrapper {
@@ -229,7 +229,7 @@ h6 {
 }
 
 
-/* Custom CSS for input box 
+/* Custom CSS for input box
 
 p.wrapper-head {
     position: relative;
@@ -242,18 +242,19 @@ p.wrapper-head {
 }
 
 .msger-input {
-  width: 75%;
+  width: 80%;
   height: 35px;
   margin-left: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: #e4e4e4;
+  padding-left: 10px;   /* Padding in input field to move text right */
 }
 
-.msger-send-btn {
-  width: 15%;
-  height: 40px;
-  border: none;
-  outline: none;
-  background-color: green;
-  color: #fff;
-  font-size: 15px;
+.msger-inputarea {
+  display: flex;
+  padding-left: 5px;
+  top: 7px;
+  position: relative;
 }
